@@ -41,7 +41,7 @@
             <button class="list__button list__button--done js-buttonDone">
             <i ${task.done ? "class=\"fas fa-check\"" : "class=\"fas fa-check fa-check--none\"" }></i>
             </button>
-            ${task.content}
+            <span class="list__text">${task.content}</span>
             <button class="list__button list__button--delete js-buttonDelete">
             <i class="far fa-trash-alt"></i>
             </button>
