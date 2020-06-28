@@ -1,7 +1,122 @@
 html {
     box-sizing: border-box;
+    background-color: rgb(236, 236, 236);
 }
 
 *, ::after, ::before {
     box-sizing: inherit;
+}
+
+.main{
+    font-family: 'Roboto', sans-serif;
+    max-width: 900px;
+    margin: 36px auto;
+}
+
+.header{
+    padding: 25px;
+}
+.section{
+    background-color: white;
+}
+
+.section__header{
+    padding: 25px;
+    border-bottom: 1px grey solid;
+    margin-bottom: 0;
+}
+
+.form{
+    padding: 25px;
+    display: flex;
+}
+
+@media (max-width: 767px){
+    .form{
+        flex-wrap: wrap;
+    }
+}
+
+.form__label{
+    flex-grow: 1;
+}
+@media (max-width: 767px){
+    .form__label{
+        width: 100%;
+    }
+}
+.form__input{
+    width: 95%;
+    padding: 10px;
+}
+@media (max-width: 767px){
+    .form__input{
+        width: 100%;
+    }
+}
+.form__button{
+    border: none;
+    border-radius: 2px;
+    background-color: teal;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+@media (max-width: 767px){
+    .form__button{
+        width: 100%;
+        margin-top: 15px;
+    }
+}
+
+.form__button:hover{
+    background-color: rgb(0, 114, 114);
+}
+
+.section__list{
+    padding: 20px;
+
+}
+.section__item{
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px grey solid;
+    display: flex;
+    align-items: center;
+}
+
+.section__item--crossed{
+    text-decoration: line-through;
+    color: red;
+}
+.list__button{
+    border: none;
+    width: 35px;
+    padding: 5px;
+    color: white;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.list__button--done{
+    background-color: green;
+}
+
+.list__button--delete{
+    background-color: red;
+   
+}
+
+.fa-check--none{
+    opacity: 0;
+}
+
+.list__text{
+    margin: auto 15px;
+    font-size: 18px;
+    flex-grow: 1;
+    line-height: 1.4;
+    text-align: justify;
 }
