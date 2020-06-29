@@ -1,0 +1,28 @@
+.list__button {
+    border: none;
+    width: 35px;
+    padding: 5px;
+    color: white;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.list__button--done {
+    background-color: green;
+}
+
+.list__button--delete {
+    background-color: red;
+}
+
+.fa-check--none {
+    opacity: 0;
+}
+
+.list__text {
+    margin: auto 15px;
+    font-size: 18px;
+    flex-grow: 1;
+    line-height: 1.4;
+    text-align: justify;
+}

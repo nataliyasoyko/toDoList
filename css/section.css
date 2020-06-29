@@ -1,0 +1,26 @@
+.section {
+    background-color: white;
+}
+
+.section__header {
+    padding: 25px;
+    border-bottom: 1px grey solid;
+    margin-bottom: 0;
+}
+
+.section__list {
+    padding: 20px;
+}
+
+.section__item {
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px grey solid;
+    display: flex;
+    align-items: center;
+}
+
+.section__item--done {
+    text-decoration: line-through;
+    color: red;
+}
