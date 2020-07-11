@@ -28,7 +28,11 @@ Page doesn't need extra installation, just use the link.
 
 2. You can edit the tasks. Green button marks a task as done, and red one deletes it from your list.
 
-[![editing task](https://i.gyazo.com/8257d256b5ff7124073dbcf1fe184b04.gif)](https://gyazo.com/8257d256b5ff7124073dbcf1fe184b04)
+[![editing task](https://i.gyazo.com/301538de4989b0983fd2e985ce25255f.gif)](https://gyazo.com/301538de4989b0983fd2e985ce25255f)
+
+3. You can edit task collectively: mark all tasks as done and hide them.
+
+[![editing task](https://i.gyazo.com/024e728b9c630af32ac0ca698e1a9587.gif)](https://gyazo.com/024e728b9c630af32ac0ca698e1a9587)
 
 ## Technologies
 The project is created with:
