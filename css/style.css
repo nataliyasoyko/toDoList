@@ -86,8 +86,10 @@ html {
     display: flex;
     align-items: center;
 }
-
-.section__item--crossed{
+.section__item--hidden{
+    display: none;
+}
+.list__text--done{
     text-decoration: line-through;
     color: red;
 }

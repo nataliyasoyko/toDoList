@@ -1,10 +1,8 @@
 {
     let tasks = [];
+    let hideDoneTasks = false;
 
-    const render = () => {
-        renderTasks();
-        renderButtons();
-    }
+
 
     const resetInput = (inputContent) => {
         inputContent.value = "";
@@ -39,6 +37,20 @@
         render();
     };
 
+    const finishAllTasks = () => {
+        tasks = tasks.map((task) => ({
+            ...task,
+            done: true,
+        }));
+        render();
+    };
+
+    const showHideTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    }
+
+
     const bindEvents = () => {
         const buttonsTaskDelete = document.querySelectorAll(".js-buttonDelete");
 
@@ -57,14 +69,32 @@
         });
     };
 
+    const bindButtonsEvents = () => {
+        const finishAllTasksButton = document.querySelector(".js-finishButton");
+
+        if (finishAllTasksButton) {
+            finishAllTasksButton.addEventListener("click", () => {
+                finishAllTasks();
+            })
+        }
+
+        const showHideTasksButton = document.querySelector(".js-showHideButton");
+
+        if (showHideTasksButton) {
+            showHideTasksButton.addEventListener("click", () => {
+                showHideTasks();
+            })
+        };
+    }
+
     const renderTasks = () => {
         const taskToHTML = tasks.map(task =>
             `
-            <li  ${task.done ? "class=\"section__item section__item--crossed\"" : "class=\"section__item\""}  >   
+            <li  ${task.done && hideDoneTasks ? "class=\"section__item section__item--hidden\"" : "class=\"section__item\""}  >   
             <button class="list__button list__button--done js-buttonDone">
             <i ${task.done ? "class=\"fas fa-check\"" : "class=\"fas fa-check fa-check--none\"" }></i>
             </button>
-            <span class="list__text">${task.content}</span>
+            <span class="list__text${task.done ? " list__text--done" : ""}">${task.content}</span>
             <button class="list__button list__button--delete js-buttonDelete">
             <i class="far fa-trash-alt"></i>
             </button>
@@ -80,12 +110,19 @@
     };
 
     const renderButtons = () => {
-        const buttonsToHTML = `
-        <button class="section__button section__button--hide js-showHideButton">Ukryj  Pokaż ukończone</button>
-        <button class="section__button js-finishButton">Ukończ wszystkie</button>
+        const buttonsElement = document.querySelector(".js-buttons");
+
+        if (!tasks.length) {
+            buttonsElement.innerHTML = "";
+            return;
+        }
+        buttonsElement.innerHTML = `
+        <button class="section__button section__button--hide js-showHideButton">
+        ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone</button>
+        <button class="section__button js-finishButton" ${tasks.every(({done}) => done) ? " disabled" : ""}>Ukończ wszystkie</button>
         `
-        document.querySelector(".js-buttons").innerHTML = buttonsToHTML;
-};
+
+    };
 
     const onSubmitAddTask = (event) => {
         event.preventDefault();
@@ -97,10 +134,18 @@
             newTaskElement.focus()
             return;
         };
-
+        resetInput(newTaskElement);
         addNewTask(newTaskContent);
         render();
-        resetInput(newTaskElement);
+
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
+        bindButtonsEvents();
+        addButtons();
+
     }
 
     const init = () => {
