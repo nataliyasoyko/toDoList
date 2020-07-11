@@ -26,3 +26,8 @@
     line-height: 1.4;
     text-align: justify;
 }
+
+.list__text--done {
+    text-decoration: line-through;
+    color: red;
+}

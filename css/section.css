@@ -20,7 +20,6 @@
     align-items: center;
 }
 
-.section__item--done {
-    text-decoration: line-through;
-    color: red;
+.section__item--hidden {
+    display: none;
 }
