@@ -28,7 +28,7 @@
     color: white;
     padding: 10px;
     cursor: pointer;
-    transition: .2s;
+    transition: .2s linear;
 }
 
 @media (max-width: 767px) {
@@ -40,4 +40,5 @@
 
 .form__button:hover {
     background-color: rgb(0, 114, 114);
+    transform: scale(1.1)
 }

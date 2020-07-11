@@ -8,11 +8,21 @@
 }
 
 .list__button--done {
-    background-color: green;
+    background-color: hsl(120, 100%, 25%);
+    transition: .2s;
+}
+
+.list__button--done:hover {
+    background-color: hsl(120, 100%, 30%);
 }
 
 .list__button--delete {
-    background-color: red;
+    background-color: hsl(0, 100%, 50%);
+    transition: .2s;
+}
+
+.list__button--delete:hover {
+    background-color: hsl(0, 100%, 55%);
 }
 
 .fa-check--none {

@@ -3,9 +3,43 @@
 }
 
 .section__header {
+    display: flex;
     padding: 25px;
     border-bottom: 1px grey solid;
     margin-bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media (max-width: 767px) {
+    .section__header {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
+
+.section__button {
+    border: none;
+    padding: 8px 12px;
+    color: teal;
+    background-color: transparent;
+    font-size: 18px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+@media(max-width: 767px) {
+    .section__button {
+        display: block;
+    }
+}
+
+.section__button:hover {
+    color: hsl(180, 100%, 30%);
+}
+
+.section__button:disabled {
+    color: grey;
 }
 
 .section__list {
