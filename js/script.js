@@ -1,6 +1,10 @@
 {
     let tasks = [];
 
+    const render = () => {
+        renderTasks();
+    }
+
     const resetInput = (inputContent) => {
         inputContent.value = "";
     };
@@ -52,11 +56,9 @@
         });
     };
 
-    const render = () => {
-        let htmlString = "";
-
-        for (let task of tasks) {
-            htmlString += `
+    const renderTasks = () => {
+        const taskToHTML = tasks.map(task =>
+            `
             <li  ${task.done ? "class=\"section__item section__item--crossed\"" : "class=\"section__item\""}  >   
             <button class="list__button list__button--done js-buttonDone">
             <i ${task.done ? "class=\"fas fa-check\"" : "class=\"fas fa-check fa-check--none\"" }></i>
@@ -66,9 +68,12 @@
             <i class="far fa-trash-alt"></i>
             </button>
             </li>
+            
             `
-        }
-        document.querySelector(".js-tasksList").innerHTML = htmlString;
+        );
+        const tasksToHTML = taskToHTML.join("");
+
+        document.querySelector(".js-tasksList").innerHTML = tasksToHTML;
 
         bindEvents();
     }
