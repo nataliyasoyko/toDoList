@@ -1,16 +1,29 @@
 {
-    const tasks = [];
+    let tasks = [];
 
-    const resetInput = (inputContent) =>{
+    const resetInput = (inputContent) => {
         inputContent.value = "";
     };
 
-    const taskDelete = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+    const deleteTask = (taskIndex) => {
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ]
         render();
     };
-    const taskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
+    const toggleDoneTask = (taskIndex) => {
+        tasks = [
+
+            ...tasks.slice(0, taskIndex),
+            {
+                ...tasks[taskIndex],
+                done: !tasks[taskIndex].done,
+            },
+            ...tasks.slice(taskIndex + 1),
+
+        ]
+
         render();
     };
 
@@ -19,7 +32,7 @@
 
         buttonsTaskDelete.forEach((buttonTaskDelete, index) => {
             buttonTaskDelete.addEventListener("click", () => {
-                taskDelete(index);
+                deleteTask(index);
             });
         });
 
@@ -27,7 +40,7 @@
 
         buttonsTaskDone.forEach((buttonTaskDone, index) => {
             buttonTaskDone.addEventListener("click", () => {
-                taskDone(index);
+                toggleDoneTask(index);
             });
         });
     };
