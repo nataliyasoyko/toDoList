@@ -1,6 +1,6 @@
 # To do list
 
-![view image](https://raw.githubusercontent.com/nataliyasoyko/toDoList/master/images/share.png)
+![view image](https://raw.githubusercontent.com/nataliyasoyko/toDoList/master/images/share.JPG)
 
 
 ## Table of content
@@ -43,5 +43,5 @@ The project is created with:
 - BEM
 
 ## Project status
-The project was created on the beginning of my adventure with Front End Development as a homework of the Youcode course.
+The project was created on the beginning of my adventure with Front End Development as a homework of the YouCode course.
 It will be evolved along with my skills.
