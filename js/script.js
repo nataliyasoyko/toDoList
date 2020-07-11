@@ -3,6 +3,7 @@
 
     const render = () => {
         renderTasks();
+        renderButtons();
     }
 
     const resetInput = (inputContent) => {
@@ -76,7 +77,15 @@
         document.querySelector(".js-tasksList").innerHTML = tasksToHTML;
 
         bindEvents();
-    }
+    };
+
+    const renderButtons = () => {
+        const buttonsToHTML = `
+        <button class="section__button section__button--hide js-showHideButton">Ukryj  Pokaż ukończone</button>
+        <button class="section__button js-finishButton">Ukończ wszystkie</button>
+        `
+        document.querySelector(".js-buttons").innerHTML = buttonsToHTML;
+};
 
     const onSubmitAddTask = (event) => {
         event.preventDefault();
